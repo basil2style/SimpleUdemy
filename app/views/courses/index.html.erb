@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Courses</h1>
+<%= link_to new_course_path, class: "btn-floating btn-large waves-effect waves-light red" do %>
+<i class="material-icons">add</i>
+<% end %>
 
 <table>
   <thead>
@@ -17,7 +20,7 @@
   <tbody>
     <% @courses.each do |course| %>
       <tr>
-        <td><%= course.image %></td>
+        <td><%= link_to course.title, course %></td>
         <td><%= course.video %></td>
         <td><%= course.title %></td>
         <td><%= course.star %></td>
